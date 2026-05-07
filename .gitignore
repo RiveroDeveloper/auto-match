@@ -1,0 +1,38 @@
+# Directorios de entornos virtuales
+venv/
+.env
+
+# Archivos de caché y de compilación de Django
+__pycache__/
+*.pyc
+
+# Archivos de configuración de Django
+local_settings.py
+
+# Directorios y archivos de Node.js (React)
+node_modules/
+build/
+.cache/
+.DS_Store
+
+# Archivos de registro y de sistema
+.vscode/
+.idea/
+npm-debug.log
+.kiro
+
+# Archivos de despliegue y configuración sensible
+*.pem
+*.key
+car-store-key.pem
+deploy-temp.sh
+update-env.sh
+auto-deploy.ps1
+DEPLOY_INSTRUCTIONS.md
+QUICK_DEPLOY.md
+
+# Archivos temporales y de prueba
+*.tmp
+*.swp
+*.bak
+check_urls.py

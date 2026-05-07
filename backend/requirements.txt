@@ -1,0 +1,32 @@
+# Django y DRF
+Django==4.2.7
+djangorestframework==3.14.0
+
+# Documentación de API moderna (compatible con Python 3.12)
+drf-spectacular==0.27.0
+
+# CORS para frontend
+django-cors-headers==4.3.1
+
+# Utilidades adicionales
+Pillow==10.1.0
+
+# JWT Authentication
+djangorestframework-simplejwt
+
+# Testing y datos de prueba
+faker==25.9.1
+
+# Entregable #2 - Nuevas dependencias
+# Generación de reportes PDF
+reportlab==4.4.5
+
+# Generación de reportes Excel
+openpyxl==3.1.2
+
+# Consumo de APIs externas
+requests==2.31.0
+coreapi==2.3.3
+
+# Internacionalización (ya incluido en Django, pero agregamos django-rosetta para gestión)
+django-rosetta==0.10.0

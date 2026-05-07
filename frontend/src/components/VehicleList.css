@@ -1,0 +1,80 @@
+/* Contenedor del grid de vehículos */
+.vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* tarjetas adaptables */
+  gap: 20px;
+  max-width: 1000px; /* ancho máximo del contenedor */
+  margin: 100px auto 20px auto; /* centrado y espacio superior para navbar de 80px */
+  padding: 0 20px; /* espacio lateral */
+}
+
+/* Tarjeta de vehículo */
+.vehicle-card {
+  background-color: #1f1f1f; /* fondo oscuro */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Imagen del vehículo */
+.vehicle-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #333333;
+}
+
+/* Contenedor de la información */
+.vehicle-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: #ffffff; /* texto blanco */
+}
+
+/* Modelo del vehículo */
+.vehicle-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ff5722; /* naranja */
+  text-transform: uppercase;
+}
+
+/* Detalles del vehículo */
+.vehicle-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #aaaaaa; /* gris claro */
+}
+
+/* Precio destacado */
+.vehicle-info p:last-child {
+  color: #ff5722; /* naranja */
+  font-weight: 600;
+}
+
+/* Responsive: menos de 900px */
+@media (max-width: 900px) {
+  .vehicles-grid {
+    max-width: 700px;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .vehicles-grid {
+    max-width: 95%;
+    gap: 10px;
+  }
+}

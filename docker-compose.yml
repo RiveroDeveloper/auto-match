@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: car-store-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - backend_static:/app/static
+      # Usar bind mount para media para que las imágenes sean accesibles
+      - ./backend/media:/app/media
+    environment:
+      - DEBUG=${DEBUG:-False}
+      - SECRET_KEY=${SECRET_KEY:-django-insecure-change-in-production}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS:-localhost,127.0.0.1}
+      - DATABASE_URL=${DATABASE_URL:-sqlite:///db.sqlite3}
+      - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:80}
+    env_file:
+      - .env
+    networks:
+      - car-store-network
+    healthcheck:
+      test: ["CMD", "python", "manage.py", "check"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=${VITE_API_URL:-http://localhost:8000/car-store/api/v1/}
+    container_name: car-store-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      # Montar el directorio media del backend para que nginx pueda servirlo directamente
+      - ./backend/media:/media:ro
+    depends_on:
+      - backend
+    networks:
+      - car-store-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  backend_static:
+  backend_media:
+
+networks:
+  car-store-network:
+    driver: bridge
+

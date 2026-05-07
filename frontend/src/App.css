@@ -1,0 +1,29 @@
+.App {
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  padding-top: 70px;
+}
+
+/* .registrar {
+  padding-top: 110px;
+} */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default margins and ensure full width */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure all sections take full width */
+section {
+  width: 100%;
+  position: relative;
+}

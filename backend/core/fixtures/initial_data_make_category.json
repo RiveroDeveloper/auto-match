@@ -1,0 +1,19 @@
+[
+    { "model": "core.make", "fields": { "name": "Toyota" } },
+    { "model": "core.make", "fields": { "name": "Honda" } },
+    { "model": "core.make", "fields": { "name": "Nissan" } },
+    { "model": "core.make", "fields": { "name": "Mazda" } },
+    { "model": "core.make", "fields": { "name": "Hyundai" } },
+    { "model": "core.make", "fields": { "name": "Kia" } },
+    { "model": "core.make", "fields": { "name": "Chevrolet" } },
+    { "model": "core.make", "fields": { "name": "Ford" } },
+
+    { "model": "core.category", "fields": { "name": "Sedán" } },
+    { "model": "core.category", "fields": { "name": "SUV" } },
+    { "model": "core.category", "fields": { "name": "Hatchback" } },
+    { "model": "core.category", "fields": { "name": "Pickup" } },
+    { "model": "core.category", "fields": { "name": "Coupé" } },
+    { "model": "core.category", "fields": { "name": "Convertible" } },
+    { "model": "core.category", "fields": { "name": "Van / Minivan" } },
+    { "model": "core.category", "fields": { "name": "Deportivo" } }
+]

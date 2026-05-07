@@ -1,0 +1,42 @@
+[
+    { "model": "core.vehicle", "fields": {
+        "model": "Corolla",
+        "year": 2022,
+        "color": "Blanco",
+        "price": "25000.00",
+        "make": 1,
+        "category": 1
+    }},
+    { "model": "core.vehicle", "fields": { 
+        "model": "CR-V",
+        "year": 2023,
+        "color": "Negro",
+        "price": "32000.00",
+        "make": 2,
+        "category": 2
+    }},
+    { "model": "core.vehicle", "fields": { 
+        "model": "Frontier",
+        "year": 2021,
+        "color": "Gris",
+        "price": "28000.00",
+        "make": 3,
+        "category": 3
+    }},
+    { "model": "core.vehicle", "fields": { 
+        "model": "Mazda 3",
+        "year": 2022,
+        "color": "Rojo",
+        "price": "23000.00",
+        "make": 4,
+        "category": 4
+    }},
+    { "model": "core.vehicle", "fields": { 
+        "model": "Veloster",
+        "year": 2020,
+        "color": "Azul",
+        "price": "21000.00",
+        "make": 5,
+        "category": 5
+    }}
+]

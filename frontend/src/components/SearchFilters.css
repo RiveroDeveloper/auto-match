@@ -1,0 +1,348 @@
+
+.filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filters-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clear-filters-btn {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-filters-btn:hover:not(:disabled) {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.clear-filters-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toggle-filters-btn {
+  background: var(--accent-color);
+  color: var(--text-primary);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-filters-btn:hover {
+  background: var(--accent-hover);
+  transform: scale(1.05);
+}
+
+.filters-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filter-input,
+.filter-select {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(242, 68, 35, 0.1);
+}
+
+.price-range,
+.year-range {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.price-input,
+.year-input {
+  flex: 1;
+  min-width: 0;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.price-separator,
+.year-separator {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.checkbox-group,
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkbox-item,
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.checkbox-item:hover,
+.radio-item:hover {
+  color: var(--accent-color);
+}
+
+.checkbox-item input,
+.radio-item input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.checkbox-label,
+.radio-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.checkbox-item:hover .checkbox-label,
+.radio-item:hover .radio-label {
+  color: var(--text-primary);
+}
+
+.icon-filter-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.icon-filter-btn {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-filter-btn:hover {
+  border-color: var(--accent-color);
+  background: rgba(242, 68, 35, 0.05);
+}
+
+.icon-filter-btn.active {
+  border-color: var(--accent-color);
+  background: rgba(242, 68, 35, 0.1);
+  color: var(--accent-color);
+}
+
+.icon-filter-icon {
+  font-size: 1.5rem;
+}
+
+.icon-filter-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.color-btn {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+  border-color: var(--accent-color);
+}
+
+.color-btn.active {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(242, 68, 35, 0.3);
+}
+
+.color-btn.active::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .search-filters {
+    position: static;
+    max-height: none;
+    margin-bottom: 24px;
+  }
+  
+  .icon-filter-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .color-palette {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .search-filters {
+    padding: 16px;
+  }
+  
+  .filters-header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+  
+  .filters-content {
+    gap: 20px;
+  }
+  
+  .icon-filter-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .color-palette {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .color-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-filters {
+    padding: 12px;
+  }
+  
+  .filters-title {
+    font-size: 1.1rem;
+  }
+  
+  .icon-filter-group {
+    grid-template-columns: 1fr;
+  }
+  
+  .color-palette {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Botón de búsqueda */
+.search-button-container {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.search-button {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-color), #ff6b35);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.search-button:hover {
+  background: linear-gradient(135deg, #ff6b35, var(--primary-color));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 87, 51, 0.3);
+}
+
+.search-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(255, 87, 51, 0.3);
+}
