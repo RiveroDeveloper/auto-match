@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     libjpeg-dev \
     zlib1g-dev \
+    gettext-base \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -35,5 +36,4 @@ COPY start.sh /start.sh
 
 RUN chmod +x /start.sh && mkdir -p /app/backend/static
 
-EXPOSE 80
 CMD ["/start.sh"]
