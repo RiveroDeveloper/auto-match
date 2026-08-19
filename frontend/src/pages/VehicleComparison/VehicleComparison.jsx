@@ -4,6 +4,7 @@ import './VehicleComparison.css';
 import { useComparison } from '../../contexts/ComparisonContext';
 import { useCurrency } from '../../contexts/CurrencyContext';
 import { getVehicles } from '../../services/vehicleService';
+import getVehicleImage from '../../utils/vehicleImage';
 
 const VehicleComparison = () => {
   const { t } = useTranslation();
@@ -19,7 +20,7 @@ const VehicleComparison = () => {
         const data = await getVehicles();
         const transformedVehicles = data.map(vehicle => ({
           id: vehicle.id,
-          image: vehicle.image_url || (vehicle.image ? `http://localhost:8000${vehicle.image}` : '/images/default-car.jpg'),
+          image: getVehicleImage(vehicle),
           brand: vehicle.make_name || vehicle.make?.name || t('vehicle.noBrand'),
           model: vehicle.model,
           year: vehicle.year,

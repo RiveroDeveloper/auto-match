@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import VehicleAnalysis from '../../components/VehicleAnalysis';
 import { getVehicles } from '../../services/vehicleService';
+import getVehicleImage from '../../utils/vehicleImage';
 import './Features.css';
 
 const Features = () => {
@@ -17,7 +18,7 @@ const Features = () => {
         const data = await getVehicles();
         const transformedVehicles = data.map(vehicle => ({
           id: vehicle.id,
-          image: vehicle.image_url || (vehicle.image ? `http://localhost:8000${vehicle.image}` : '/images/default-car.jpg'),
+          image: getVehicleImage(vehicle),
           brand: vehicle.make_name || vehicle.make?.name || t('vehicle.noBrand'),
           model: vehicle.model,
           year: vehicle.year,

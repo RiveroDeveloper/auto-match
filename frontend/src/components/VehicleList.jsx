@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useCurrency } from '../contexts/CurrencyContext';
 import { translateColor } from '../i18n/translateVehicleData';
 import { getVehicles } from '../services/vehicleService';
+import getVehicleImage from '../utils/vehicleImage';
 import './VehicleList.css';
 
 export default function VehicleList() {
@@ -31,7 +32,7 @@ export default function VehicleList() {
       {vehicles.map((vehicle) => (
         <div className="vehicle-card" key={vehicle.id}>
           <img
-            src={vehicle.image || '/images/default-car.jpg'}
+            src={getVehicleImage(vehicle)}
             alt={vehicle.model}
             className="vehicle-image"
           />

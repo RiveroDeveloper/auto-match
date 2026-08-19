@@ -1,0 +1,21 @@
+# ============================================================
+# AutoMatch - Blueprint para Render.com (plan gratuito)
+# Un solo Web Service (contenedor combinado Nginx + Django)
+# ============================================================
+
+services:
+  - type: web
+    name: automatch
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /car-store/api/v1/makes/
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com,localhost,127.0.0.1"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: BASE_URL
+        sync: false

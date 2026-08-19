@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base URL para endpoints de autenticación (están fuera de /api/v1/)
-const AUTH_BASE_URL = import.meta.env.VITE_API_URL?.replace('/api/v1/', '') || 'http://localhost:8000/car-store';
+const AUTH_BASE_URL = (import.meta.env.VITE_API_URL?.replace('/api/v1/', '') || 'http://localhost:8000/car-store').replace(/\/+$/, '');
 
 export async function login({ username, password }) {
   // Token endpoint está en /api/token/, no en /api/v1/token/

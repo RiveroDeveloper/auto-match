@@ -27,6 +27,13 @@ Thumbs.db
 .env.local
 .env.*.local
 
+# Dependencies & cache
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
 # Misc
 *.bak
 *.tmp

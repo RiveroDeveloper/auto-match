@@ -4,6 +4,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useCurrency } from '../../contexts/CurrencyContext';
 import axiosGlobalInstance from '../../api/axiosGlobalInstance';
 import { translateColor } from '../../i18n/translateVehicleData';
+import getVehicleImage from '../../utils/vehicleImage';
 import './CartPage.css';
 
 const CartPage = ({ onViewDetails }) => {
@@ -117,7 +118,7 @@ const CartPage = ({ onViewDetails }) => {
               <div key={item.id} className="cart-item">
                 <div className="item-image">
                   <img 
-                    src={(item.vehicle.image_url) || (item.vehicle.image ? `http://localhost:8000${item.vehicle.image}` : '/images/default-car.jpg')} 
+                    src={getVehicleImage(item.vehicle)}
                     alt={item.vehicle.model}
                   />
                 </div>

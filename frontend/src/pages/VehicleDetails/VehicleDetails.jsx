@@ -4,6 +4,7 @@ import './VehicleDetails.css';
 import { useServices } from '../../contexts/ServicesContext';
 import { translateColor, translateSpec, translateFeature, translateTag } from '../../i18n/translateVehicleData';
 import { useCurrency } from '../../contexts/CurrencyContext';
+import getVehicleImage from '../../utils/vehicleImage';
 
 const VehicleDetails = ({ vehicleId, onBack }) => {
   const { t } = useTranslation();
@@ -33,7 +34,7 @@ const VehicleDetails = ({ vehicleId, onBack }) => {
         // Transformar datos del backend al formato esperado
         const transformedVehicle = {
           id: vehicleData.id,
-          images: [vehicleData.image_url || (vehicleData.image ? `http://localhost:8000${vehicleData.image}` : '/images/default-car.jpg')],
+          images: [getVehicleImage(vehicleData)],
           brand: vehicleData.make_name || vehicleData.make?.name || t('vehicle.noBrand'),
           model: vehicleData.model,
           year: vehicleData.year,

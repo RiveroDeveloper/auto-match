@@ -5,6 +5,7 @@ import VehicleCard from '../../components/VehicleCard';
 import { getVehicles, searchVehicles } from '../../services/vehicleService';
 import { getMakes } from '../../services/makeService';
 import { getCategories } from '../../services/categoryService';
+import getVehicleImage from '../../utils/vehicleImage';
 import './SearchResults.css';
 
 const SearchResults = ({ onViewDetails, initialFilters }) => {
@@ -115,7 +116,7 @@ const SearchResults = ({ onViewDetails, initialFilters }) => {
         // Transformar datos del backend al formato esperado por el frontend
         const transformedVehicles = vehiclesData.map(vehicle => ({
           id: vehicle.id,
-          image: vehicle.image_url || (vehicle.image ? `http://localhost:8000${vehicle.image}` : '/images/default-car.jpg'),
+          image: getVehicleImage(vehicle),
           brand: vehicle.make_name || vehicle.make?.name || t('vehicle.noBrand'),
           model: vehicle.model,
           year: vehicle.year,
@@ -255,7 +256,7 @@ const SearchResults = ({ onViewDetails, initialFilters }) => {
         // Adaptar resultados a la tarjeta
         const adapted = results.map(vehicle => ({
         id: vehicle.id,
-        image: vehicle.image_url || (vehicle.image ? `http://localhost:8000${vehicle.image}` : '/images/default-car.jpg'),
+        image: getVehicleImage(vehicle),
         brand: vehicle.make_name || vehicle.make?.name || t('vehicle.noBrand'),
         model: vehicle.model,
         year: vehicle.year,

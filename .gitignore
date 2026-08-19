@@ -9,6 +9,10 @@ __pycache__/
 # Archivos de configuración de Django
 local_settings.py
 
+# Configuración de opencode (puede contener referencias a claves)
+opencode.json
+opencode.jsonc
+
 # Directorios y archivos de Node.js (React)
 node_modules/
 build/
