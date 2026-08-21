@@ -8,6 +8,10 @@
 - **Backend API**: https://automatch-q0b8.onrender.com/api/v1/
 - **API Documentation**: https://automatch-q0b8.onrender.com/api/docs/
 
+> **Authentication is disabled on the live demo** so visitors can explore
+> every feature (search, comparison, cart) without logging in. To re-enable
+> it, set `VITE_AUTH_DISABLED=false` in the frontend build and redeploy.
+
 ## Description
 
 Car store project (AutoMatch) with React frontend and Django REST API backend. A modern vehicle marketplace application with features including vehicle search, comparison, currency conversion, and internationalization support.

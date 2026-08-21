@@ -11,6 +11,8 @@ RUN npm install
 COPY frontend/ ./
 ARG VITE_API_URL=/car-store/api/v1/
 ENV VITE_API_URL=$VITE_API_URL
+ARG VITE_AUTH_DISABLED=true
+ENV VITE_AUTH_DISABLED=$VITE_AUTH_DISABLED
 RUN npm run build
 
 # ---- Etapa 2: Runtime combinado (Nginx + Django) ----
