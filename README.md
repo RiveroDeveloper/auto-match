@@ -1,18 +1,18 @@
-# 🚗 Car Store - AutoMatch
+# Car Store - AutoMatch
 
-## 🌐 Live Application
+## Live Application
 
-**🔗 [View Live Application](http://52.90.19.84)**
+** [View Live Application](https://automatch-q0b8.onrender.com/)**
 
-- **Frontend**: http://52.90.19.84
-- **Backend API**: http://52.90.19.84:8000/car-store/api/v1/
-- **API Documentation**: http://52.90.19.84:8000/car-store/api/docs/
+- **Frontend**: https://automatch-q0b8.onrender.com/
+- **Backend API**: https://automatch-q0b8.onrender.com/api/v1/
+- **API Documentation**: https://automatch-q0b8.onrender.com/api/docs/
 
-## 📦 Description
+## Description
 
 Car store project (AutoMatch) with React frontend and Django REST API backend. A modern vehicle marketplace application with features including vehicle search, comparison, currency conversion, and internationalization support.
 
-## 🛠️ Technologies
+## Technologies
 
 ### Frontend
 - React 19.x
@@ -37,10 +37,10 @@ Car store project (AutoMatch) with React frontend and Django REST API backend. A
 - Docker (containerization)
 - Nginx (reverse proxy & static file serving)
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
-- Node.js 18+ 
+- Node.js 18+
 - Python 3.8+
 - npm or yarn
 
@@ -86,7 +86,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-## 📝 Development
+## Development
 
 ### Adding new dependencies
 
@@ -105,8 +105,8 @@ npm install <package>
 cd backend
 
 # Activate virtual environment
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
+.venv\Scripts\activate # Windows
+source .venv/bin/activate # macOS/Linux
 
 # Install new dependency
 pip install <package>
@@ -132,9 +132,9 @@ python manage.py migrate
 npm install <package>
 ```
 
-## 📚 API Documentation
+## API Documentation
 
-### 🎯 Accessing the API Documentation
+### Accessing the API Documentation
 Once the backend server is running, you can access the interactive API documentation at:
 
 #### **Swagger UI (Recommended)**
@@ -162,7 +162,7 @@ http://localhost:8000/api/schema/
 - **Compatible with OpenAPI tools**
 - **For automated integrations**
 
-### 🔗 API Endpoints
+### API Endpoints
 
 #### Base URL
 ```
@@ -173,50 +173,50 @@ http://localhost:8000/car-store/api/v1/
 
 **Makes (Car Brands)**
 ```
-GET    /makes/          → List all makes
-POST   /makes/          → Create a new make
-GET    /makes/{id}/     → Get specific make
-PUT    /makes/{id}/     → Update a make
-DELETE /makes/{id}/     → Delete a make
+GET /makes/ List all makes
+POST /makes/ Create a new make
+GET /makes/{id}/ Get specific make
+PUT /makes/{id}/ Update a make
+DELETE /makes/{id}/ Delete a make
 ```
 
 **Categories**
 ```
-GET    /categories/     → List all categories
-POST   /categories/     → Create a new category
-GET    /categories/{id}/ → Get specific category
-PUT    /categories/{id}/ → Update a category
-DELETE /categories/{id}/ → Delete a category
+GET /categories/ List all categories
+POST /categories/ Create a new category
+GET /categories/{id}/ Get specific category
+PUT /categories/{id}/ Update a category
+DELETE /categories/{id}/ Delete a category
 ```
 
 **Vehicles**
 ```
-GET    /vehicles/       → List all vehicles
-POST   /vehicles/       → Create a new vehicle
-GET    /vehicles/{id}/  → Get specific vehicle
-PUT    /vehicles/{id}/  → Update a vehicle
-DELETE /vehicles/{id}/  → Delete a vehicle
+GET /vehicles/ List all vehicles
+POST /vehicles/ Create a new vehicle
+GET /vehicles/{id}/ Get specific vehicle
+PUT /vehicles/{id}/ Update a vehicle
+DELETE /vehicles/{id}/ Delete a vehicle
 
 # Custom filters
-GET    /vehicles/by_make/?make_id=1     → Vehicles by make
-GET    /vehicles/by_category/?category_id=2  → Vehicles by category
-GET    /vehicles/search/?text=toyota&category=sedan  → Advanced search
+GET /vehicles/by_make/?make_id=1 Vehicles by make
+GET /vehicles/by_category/?category_id=2 Vehicles by category
+GET /vehicles/search/?text=toyota&category=sedan Advanced search
 ```
 
 **Reviews**
 ```
-GET    /reviews/        → List all reviews
-POST   /reviews/        → Create a new review
-GET    /reviews/{id}/   → Get specific review
-PUT    /reviews/{id}/   → Update a review
-DELETE /reviews/{id}/   → Delete a review
+GET /reviews/ List all reviews
+POST /reviews/ Create a new review
+GET /reviews/{id}/ Get specific review
+PUT /reviews/{id}/ Update a review
+DELETE /reviews/{id}/ Delete a review
 
 # Custom filters
-GET    /reviews/by_vehicle/?vehicle_id=1  → Reviews by vehicle
-GET    /reviews/by_expert/?expert_id=1    → Reviews by expert
+GET /reviews/by_vehicle/?vehicle_id=1 Reviews by vehicle
+GET /reviews/by_expert/?expert_id=1 Reviews by expert
 ```
 
-### 🔍 Advanced Search
+### Advanced Search
 
 #### Vehicle Search Parameters
 ```
@@ -243,7 +243,7 @@ GET /vehicles/search/?price_min=20000&price_max=50000
 GET /vehicles/search/?text=civic
 ```
 
-### 🧪 Testing the API
+### Testing the API
 
 #### With Swagger UI (Recommended)
 1. Go to: `http://localhost:8000/api/docs/`
@@ -256,8 +256,8 @@ GET /vehicles/search/?text=civic
 #### With Postman
 1. **Import collection** from OpenAPI schema
 2. **Configure environment variables**:
-   - `base_url`: `http://localhost:8000`
-   - `api_path`: `car-store/api/v1`
+ - `base_url`: `http://localhost:8000`
+ - `api_path`: `car-store/api/v1`
 3. **Use URLs**: `{{base_url}}/{{api_path}}/makes/`
 
 #### With cURL
@@ -267,8 +267,8 @@ curl http://localhost:8000/car-store/api/v1/makes/
 
 # Create a new make
 curl -X POST http://localhost:8000/car-store/api/v1/makes/ \
-  -H "Content-Type: application/json" \
-  -d '{"name": "BMW"}'
+ -H "Content-Type: application/json" \
+ -d '{"name": "BMW"}'
 
 # Advanced search
 curl "http://localhost:8000/car-store/api/v1/vehicles/search/?text=toyota&year_min=2020"
@@ -280,17 +280,17 @@ http://localhost:8000/car-store/api/v1/makes/
 http://localhost:8000/car-store/api/v1/vehicles/
 ```
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
 ### Error: "ModuleNotFoundError: No module named 'drf_spectacular'"
-**Cause**: Dependencies not installed  
-**Solution**: 
+**Cause**: Dependencies not installed
+**Solution**:
 ```bash
 pip install -r requirements.txt
 ```
 
 ### Error: "Dependency on app with no migrations"
-**Cause**: Migrations not created  
+**Cause**: Migrations not created
 **Solution**:
 ```bash
 python manage.py makemigrations core
@@ -298,19 +298,19 @@ python manage.py migrate
 ```
 
 ### Error: "Page not found" at `/api/docs/`
-**Cause**: URLs not configured correctly  
+**Cause**: URLs not configured correctly
 **Solution**: Verify that `drf_spectacular` is in `INSTALLED_APPS`
 
 ### Error: "Internal Server Error" in documentation
-**Cause**: Incorrect configuration in settings.py  
+**Cause**: Incorrect configuration in settings.py
 **Solution**: Verify `SPECTACULAR_SETTINGS` in settings.py
 
-## 🔗 Useful Links
+## Useful Links
 
 ### Production (Live)
-- **🌐 Live Application**: http://52.90.19.84
-- **📚 API Documentation**: http://52.90.19.84:8000/car-store/api/docs/
-- **🔧 Backend API**: http://52.90.19.84:8000/car-store/api/v1/
+- ** Live Application**: https://automatch-q0b8.onrender.com/
+- ** API Documentation**: https://automatch-q0b8.onrender.com/api/docs/
+- ** Backend API**: https://automatch-q0b8.onrender.com/api/v1/
 
 ### Local Development
 - **Swagger UI**: `http://localhost:8000/api/docs/`
@@ -318,7 +318,7 @@ python manage.py migrate
 - **OpenAPI Schema**: `http://localhost:8000/api/schema/`
 - **Django Admin**: `http://localhost:8000/admin/`
 
-## 🚀 Deployment
+## Deployment
 
 The application is deployed on AWS EC2 using Docker and Docker Compose. For deployment instructions, see the deployment documentation.
 
@@ -338,14 +338,14 @@ docker-compose exec backend python manage.py collectstatic --noinput
 docker-compose logs -f
 ```
 
-## 📋 Features
+## Features
 
-- ✅ Vehicle search and filtering
-- ✅ Vehicle comparison
-- ✅ Shopping cart functionality
-- ✅ Multi-currency support (USD, COP, EUR)
-- ✅ Internationalization (English/Spanish)
-- ✅ Responsive design
-- ✅ JWT authentication
-- ✅ API documentation (Swagger/ReDoc)
-- ✅ Report generation (PDF/Excel)
+- Vehicle search and filtering
+- Vehicle comparison
+- Shopping cart functionality
+- Multi-currency support (USD, COP, EUR)
+- Internationalization (English/Spanish)
+- Responsive design
+- JWT authentication
+- API documentation (Swagger/ReDoc)
+- Report generation (PDF/Excel)
